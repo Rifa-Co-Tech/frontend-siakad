@@ -16,7 +16,7 @@ export default function Fakultas() {
         const resAuth = await fetchWithRefresh("http://127.0.0.1:8000/profil");
         if (!resAuth.ok) throw new Error(`HTTP ${resAuth.status}`);
         const authData = await resAuth.json();
-        setUser(authData.data_login.username);
+        setUser(authData.data.username);
 
         const resFakultas = await fetchWithRefresh("http://127.0.0.1:8000/fakultas/");
         if (!resFakultas.ok) throw new Error(`HTTP ${resFakultas.status}`);

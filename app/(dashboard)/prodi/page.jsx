@@ -16,7 +16,7 @@ export default function Dashboard() {
         const resAuth = await fetchWithRefresh("http://127.0.0.1:8000/profil");
         if (!resAuth.ok) throw new Error(`HTTP ${resAuth.status}`);
         const authData = await resAuth.json();
-        setUser(authData.data_login.username);
+        setUser(authData.data.username);
 
         const resProdi = await fetchWithRefresh("http://127.0.0.1:8000/prodi/");
         if (!resProdi.ok) throw new Error(`HTTP ${resProdi.status}`);

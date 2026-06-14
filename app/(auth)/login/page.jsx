@@ -21,7 +21,7 @@ export default function Login() {
         credentials: "include",
       });
       if (response.ok) {
-        router.push("/prodi");
+        router.push("/fakultas");
       } else {
         const errData = await response.json();
         setError(errData.detail || "Login gagal");
